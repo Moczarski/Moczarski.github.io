@@ -167,8 +167,31 @@
 		.info {
 			flex: 1;
 			padding: 5%;
+			text-align: left;
 		}
 		
+		.info > div {
+				padding: 2vh;
+		}
+		
+		.skills {
+			flex: 1;
+			padding-right: 5%;
+			width: 100%;
+			padding: 4vw;
+		}
+		
+		.skills h5 {
+			padding-top: 3vh;
+		}
+		
+		.skill {
+			text-align: right;
+			padding: 2vh;
+			color: white;
+			width: 100%;
+			background-color: grey;
+		}
 		
 		#imgcontent {
 			flex: 1;
@@ -200,7 +223,6 @@
 		
 		#education h1 {
 			padding: 5%;
-			font-size: 4vw;
 		}
 		
 		#work {
@@ -218,11 +240,6 @@
 		
 		#work h1 {
 			padding: 5%;
-			font-size: 4vw;
-		}
-		
-		#work ul {
-			
 		}
 		
 		section {
@@ -306,6 +323,23 @@
 				text-align: center;
 			}
 			
+			.info {
+				text-align: center;
+			}
+			
+			.info > div {
+				text-align: left;
+				padding: 4%;
+			}
+			
+			.skill {
+				text-align: right;
+				padding: 3vh;
+				color: white;
+				width: 100%;
+				background-color: grey;
+			}
+			
 			#imgcontent {
 				flex: 1;
 			}
@@ -382,10 +416,25 @@
 		</div>
 		<div id="info">
 			<div class="info">
+			
 				<h1>Personal Info</h1>
+				<div><h5>Phone:</h5> +48 660 750 849</div>		
+				<div><h5>Email:</h5> moczarscy@gmail.com</div>
+				<div><h5>LinkedIn:</h5> linkedin.com/in/moczarskimateusz</div>
+				<div><h5>GitHub:</h5> github.com/Moczarski</div>
+				<div><h5>Address:</h5> 18-400 Łomża</div>
+				
 			</div>
-			<div class="info">
+			<div class="skills">
+			
 				<h1>Skills</h1>
+				<div><h5>HTML CSS JavaScript</h5><div class="skill"></div></div>		
+				<div><h5>SQL</h5><div class="skill"></div></div>
+				<div><h5>C# Java</h5><div class="skill"></div></div>
+				<div><h5>Systems</h5><div class="skill"></div></div>
+				<div><h5>Networks</h5><div class="skill"></div></div>
+				<div><h5>Graphic</h5><div class="skill"></div></div>
+				
 			</div>
 		</div>
       
@@ -393,7 +442,7 @@
 	
 	<section id="education">
 		
-		<h1>My education road <i class="material-icons">school</i></h1>
+		<h1>My education road <i class="material-icons" style="font-size: 8vw;">school</i></h1>
 		<div>
 			<i>2018-10 - present</i>
 			<h2>Lomza State University of Applied Sciences</h2>
@@ -414,20 +463,26 @@
 	
 	<section id="work">
     
-		<h1>IT experience <i class="material-icons">computer</i></h1>
+		<h1>IT experience <i class="material-icons" style="font-size: 8vw;">computer</i></h1>
 		<div>
-			<i>2018-10 - present</i>
-			<h2>Lomza State University of Applied Sciences</h2>
-			<i>Enginner, Computer Science</i>
+			<i>2020-05 - present</i>
+			<h2>IT Administrator - <i>Private Health Care Center "MEDICUS"</i></h2>
+			<ul>
+				<li><i class="material-icons">check</i> Creating LAN</li>
+				<li><i class="material-icons">check</i> Administration of network and systems</li>
+			</ul>
 		</div>
 		<div>
-			<i>2019-09 - 2020-02</i>
-			<h2>University of Ostrava</h2>
-			<i>Engineer, Computer Science</i>
+			<i>2018-05 - 2018-06</i>
+			<h2>Web Designer - <i>TRANSAGRO</i></h2>
+			<ul>
+				<li><i class="material-icons">check</i> Creating a website and advertising graphics</li>
+				<li><i class="material-icons">check</i> Administration of systems</li>
+			</ul>
 		</div>
 		<div>
 			<i>2016-11 - 2016-12</i>
-			<h2>IT Specialist - <i>F+U Sachsen GGmbH</i></h2>
+			<h2>IT Architect - <i>F+U Sachsen GGmbH</i></h2>
 			<ul>
 				<li><i class="material-icons">check</i> Assembly, configuration and service of computer equipment</li>
 				<li><i class="material-icons">check</i> Network infrastructure planning in an office building</li>
