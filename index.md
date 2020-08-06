@@ -9,13 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoczarskiDev</title>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	
     <style>
 	
 		* {
 			margin: 0;
 			padding: 0;
 			box-sizing: border-box;
+			text-decoration: none;
+			list-style: none;
 		}
 		
 		html {
@@ -142,6 +145,7 @@
 			color: black;
 			background-color: white;
 			min-height: 100vh;
+			text-align: center;
 		}
 		
 		#description {
@@ -149,22 +153,22 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
-			align-items: center;
-			text-align: center;
+			align-items: flex-start;
 		}
 		
 		#info {
 			flex: 1;
 			display: flex;
-			flex-direction: row;
-			justify-content: center;
+			flex-direction: row;		
 			align-items: center;
-			text-align: center;
+			width: 100%;
 		}
 		
-		#info > div {
+		.info {
 			flex: 1;
+			padding: 5%;
 		}
+		
 		
 		#imgcontent {
 			flex: 1;
@@ -179,9 +183,46 @@
 		}
 		
 		#about {
-			text-align: left;
 			flex: 2;
 			padding: 5%;
+		}
+		
+		#education {
+			display: flex;
+			flex-direction: column;
+			background-color: #262626;
+		}
+		
+		#education > div {
+			padding: 5%;
+			width: 100%;
+		}
+		
+		#education h1 {
+			padding: 5%;
+			font-size: 4vw;
+		}
+		
+		#work {
+			display: flex;
+			flex-direction: column;
+			text-align: right;
+			color: black;
+			background-color: white;
+		}
+		
+		#work > div {
+			padding: 5%;
+			width: 100%;
+		}
+		
+		#work h1 {
+			padding: 5%;
+			font-size: 4vw;
+		}
+		
+		#work ul {
+			
 		}
 		
 		section {
@@ -203,6 +244,11 @@
 			color: white;
 			background-color: black;			
 		}
+		
+		.material-icons {
+			font-size: 4vw;
+		}
+		/* ================ FOR MOBILE ================ */
 		
 		@media screen and (max-width: 600px) {
 			body {
@@ -249,6 +295,14 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+			}
+			
+			#info {
+				flex: 1;
+				display: flex;
+				flex-direction: column;		
+				align-items: center;
+				width: 100%;
 				text-align: center;
 			}
 			
@@ -262,7 +316,6 @@
 			}
 			
 			#about {
-				text-align: left;
 				flex: 2;
 			}
 			
@@ -324,48 +377,65 @@
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
 				</p>
 			</div>
 		</div>
 		<div id="info">
-			<div>
-				article 1
+			<div class="info">
+				<h1>Personal Info</h1>
 			</div>
-			<div>
-				article 2
+			<div class="info">
+				<h1>Skills</h1>
 			</div>
 		</div>
       
     </section>
 	
 	<section id="education">
-    
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+		
+		<h1>My education road <i class="material-icons">school</i></h1>
+		<div>
+			<i>2018-10 - present</i>
+			<h2>Lomza State University of Applied Sciences</h2>
+			<i>Enginner, Computer Science</i>
+		</div>
+		<div>
+			<i>2019-09 - 2020-02</i>
+			<h2>University of Ostrava</h2>
+			<i>Engineer, Computer Science</i>
+		</div>
+		<div>
+			<i>2014-09 - 2018-04</i>
+			<h2>Technical School of Computer Science</h2>
+			<i>Technican IT, Computer Science</i>
+		</div>
       
     </section>
 	
 	<section id="work">
     
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-      
+		<h1>IT experience <i class="material-icons">computer</i></h1>
+		<div>
+			<i>2018-10 - present</i>
+			<h2>Lomza State University of Applied Sciences</h2>
+			<i>Enginner, Computer Science</i>
+		</div>
+		<div>
+			<i>2019-09 - 2020-02</i>
+			<h2>University of Ostrava</h2>
+			<i>Engineer, Computer Science</i>
+		</div>
+		<div>
+			<i>2016-11 - 2016-12</i>
+			<h2>IT Specialist - <i>F+U Sachsen GGmbH</i></h2>
+			<ul>
+				<li><i class="material-icons">check</i> Assembly, configuration and service of computer equipment</li>
+				<li><i class="material-icons">check</i> Network infrastructure planning in an office building</li>
+				<li><i class="material-icons">check</i> Server and client management</li>
+				<li><i class="material-icons">check</i> Creating and managing websites, applications and databases</li>
+			</ul>
+		</div>
+		
     </section>
 	
 	<section id="other">
