@@ -28,6 +28,7 @@
 			font-family: 'Roboto', sans-serif;
 			min-height: 100vh;
 			font-size: 2vw;
+			color: black;
 		}
 		
 		nav {
@@ -135,13 +136,59 @@
 			color: white;
 		}
 		
-		section {
+		#me {
+			flex-direction: column;
+			justify-content: center;
+			color: black;
+			background-color: white;
+			min-height: 100vh;
+		}
+		
+		#description {
 			flex: 1;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+		
+		#info {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+		
+		#info > div {
+			flex: 1;
+		}
+		
+		#imgcontent {
+			flex: 1;
+			display: flex;
+		}
+		
+		#myPhoto {
+			flex: 1;
+			border-radius: 50%;
+			width: 100%;
+			padding: 10%;
+		}
+		
+		#about {
+			text-align: left;
+			flex: 2;
+			padding: 5%;
+		}
+		
+		section {
 			display: flex;
 			border: solid brown;
 			justify-content: center;
 			align-items: center;
-			height: 100vh;
 			color: white;
 			background-color: black;
 			min-height: 100vh;
@@ -179,12 +226,44 @@
 				background-repeat: no-repeat;
 			}
 			
-			#btns > button {
+			#btns > a {
 				position: relative;
 				top: 4vh;
 				font-size: 4vw;
 				padding: 2vh 4vw;
 				border-radius: 3vw;
+			}
+			
+			#me {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				color: black;
+				background-color: white;
+				min-height: 100vh;
+			}
+			
+			#description	{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			
+			#imgcontent {
+				flex: 1;
+			}
+			
+			#myPhoto {
+				border-radius: 50%;
+				width: 80%;
+			}
+			
+			#about {
+				text-align: left;
+				flex: 2;
 			}
 			
 			footer {
@@ -228,7 +307,52 @@
 
     <section id="me">
     
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+		<div id="description">
+			<div id="imgcontent">
+				<img src="./me.jpg" id="myPhoto">
+			</div>
+			<div id="about">
+				<h1>About me</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+				</p>
+			</div>
+		</div>
+		<div id="info">
+			<div>
+				article 1
+			</div>
+			<div>
+				article 2
+			</div>
+		</div>
       
     </section>
 	
