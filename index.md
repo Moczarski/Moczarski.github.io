@@ -17,12 +17,17 @@
 			padding: 0;
 			box-sizing: border-box;
 		}
+		
+		html {
+			scroll-behavior: smooth;
+		}
     
 		body {
 			display: flex;
 			flex-direction: column;
 			font-family: 'Roboto', sans-serif;
 			min-height: 100vh;
+			font-size: 2vw;
 		}
 		
 		nav {
@@ -31,51 +36,47 @@
 			flex-direction: column;
 			align-items: center;
 			left: 5%;
-			min-width: 9vw;
-			font-weight: bold;
-			transition: 1s;
 			background-color: white;
 			color: black;
+			z-index: 3;
+			font-size: 2vw;
 		}
 		
-		nav > div {
-			padding: 20%;
+		nav div	{
 			width: 100%;
-			text-align: center;
-			transition: 1s;
-			background-color: white;
-			color: black;
-		}
-		
-		ul {
 			display: none;
+		}
+		
+		nav button {
 			width: 100%;
-			flex-direction: column;
-			list-style-type: none;
+			cursor: pointer;
+			border: none;
+			background-color: white;
+			color: black;
+			font-weight: bold;
+			font-size: 2vw;
+			padding: 2vh 4vw;
+			transition: 1s;
 		}
 		
-		nav > div:hover + ul {
-			display: flex;
-		}
-		
-		ul:hover {
-			display: flex;
-		}
-		
-		nav > div:hover	{
+		nav:hover button {
 			color: white;
-			background-color: grey;
+			background-color: gray;
+		}
+		
+		nav:hover > div {
+			display: flex;
+			flex-direction: column;
 		}
 		
 		a {
 			padding-top: 10%;
 			padding-bottom: 10%;
-			display: flex;
-			justify-content: center;
 			text-align: center;
 			text-decoration: none;
 			transition: 1s;
 			color: black;
+			background-color: white;
 		}
 		
 		a:hover {
@@ -84,12 +85,16 @@
 		}
 		
 		header {
-			flex: 1;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
-			align-items: center;
 			font-size: 3vw;
 			color: white;
+			background-image: url("./header.jpg");
+			background-attachment: fixed;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: bottom;
 			background-color: black;
 			min-height: 100vh;
 		}
@@ -98,6 +103,36 @@
 			padding-top: 15%;
 			padding-bottom: 15%;
 			text-align: center;
+			z-index: 2;
+		}
+		
+		#photo {
+			position: absolute;
+			z-index: 1;
+			background-color: black;
+			opacity: 0.5;
+			width: 100%;
+			height: 100%;
+		}
+		
+		#btns > a {
+			background-color: white;
+			color: black;
+			border: none;
+			padding: 2vh 4vw;
+			cursor: pointer;
+			color: black;
+			opacity: 0.7;
+			border-radius: 1vw;
+			font-size: 2vw;
+			transition: 1s;
+			position: relative;
+			top: 4vh;
+		}
+		
+		#btns > a:hover {
+			background: gray;
+			color: white;
 		}
 		
 		section {
@@ -123,13 +158,33 @@
 		}
 		
 		@media screen and (max-width: 600px) {
+			body {
+				font-size: 5vw;
+			}
+			
 			nav {
-				min-width: 30vw;
+				font-size: 4vw;
+			}
+			
+			nav button {
+				padding: 2vh 8vw;
+				font-size: 4vw;
 			}
 			
 			header {
-				min-height: 40vh;
 				font-size: 4vw;
+				background-image: url("./header-mobile.jpg");
+				background-attachment: fixed;
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+			}
+			
+			#btns > button {
+				position: relative;
+				top: 4vh;
+				font-size: 4vw;
+				padding: 2vh 4vw;
+				border-radius: 3vw;
 			}
 			
 			footer {
@@ -145,23 +200,28 @@
   
 	<nav>
 	
-		<div>MENU</div>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#me">About Me</a></li>
-			<li><a href="#education">Education</a></li>
-			<li><a href="#work">Experience</a></li>
-			<li><a href="#other">More</a></li>
-		</ul>
+		<button>MENU</button>
+		<div>
+			<a href="#">Home</a>
+			<a href="#me">About Me</a>
+			<a href="#education">Education</a>
+			<a href="#work">Experience</a>
+			<a href="#other">More</a>
+		</div>
 		
 	</nav>
   
     <header>
-		
+	
+		<div id="photo"></div>
 		<div>
 			<h5>Hello, World.</h5>
 			<h1>I'm Mateusz Moczarski</h1>
 			<h3>Student of Software Engineering</h3>
+			<div id="btns">
+				<a href="#me">Read more</a>
+				<a href="./CV.pdf">My resume</a>
+			</div>
 		</div>
       
     </header>
