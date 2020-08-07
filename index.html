@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <html lang="en">
 
   <head>
@@ -11,6 +10,24 @@
     <title>MoczarskiDev</title>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<script src="https://kit.fontawesome.com/e157611af7.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
+	<script>
+		AOS.init();
+		let delay;
+		
+		function loading(){
+			delay = setTimeout(showPage, 1000);
+		}
+		
+		function showPage() {
+			document.getElementById("loader").style.display = "none";
+			document.getElementById("page").style.display = "flex";
+		}
+	
+	</script>
 	
     <style>
 	
@@ -26,13 +43,37 @@
 			scroll-behavior: smooth;
 		}
     
-		body {
-			display: flex;
+		#page {
+			display: none;
 			flex-direction: column;
 			font-family: 'Roboto', sans-serif;
 			min-height: 100vh;
 			font-size: 2vw;
 			color: black;
+			animation: show 1s;
+		}
+		
+		@keyframes show {
+			0% { opacity: 0; }
+			100% { opacity: 1; }
+		}
+		
+		#loader {
+			position: absolute;
+			left: 38vw;
+			top: 25%;
+			z-index: 1;
+			width: 24vw;
+			height: 24vw;
+			border: 3vw solid #d9d9d9;
+			border-radius: 50%;
+			border-top: 3vw solid #4d4d4d;
+			animation: spin 2s linear infinite;
+		}
+
+		@keyframes spin {
+			0% { transform: rotate(0deg); }
+			100% { transform: rotate(360deg); }
 		}
 		
 		nav {
@@ -61,7 +102,7 @@
 			font-weight: bold;
 			font-size: 2vw;
 			padding: 2vh 4vw;
-			transition: 1s;
+			transition: 0.5s;
 		}
 		
 		nav:hover button {
@@ -74,17 +115,17 @@
 			flex-direction: column;
 		}
 		
-		a {
+		nav a {
 			padding-top: 10%;
 			padding-bottom: 10%;
 			text-align: center;
 			text-decoration: none;
-			transition: 1s;
+			transition: 0.5s;
 			color: black;
 			background-color: white;
 		}
 		
-		a:hover {
+		nav a:hover {
 			color: white;
 			background-color: grey;
 		}
@@ -117,7 +158,7 @@
 			background-color: black;
 			opacity: 0.5;
 			width: 100%;
-			height: 100%;
+			height: 100vh;
 		}
 		
 		#btns > a {
@@ -130,7 +171,7 @@
 			opacity: 0.7;
 			border-radius: 1vw;
 			font-size: 2vw;
-			transition: 1s;
+			transition: 0.5s;
 			position: relative;
 			top: 4vh;
 		}
@@ -172,7 +213,7 @@
 		}
 		
 		.info > div {
-				padding: 2vh;
+			padding: 2vh;
 		}
 		
 		.skills {
@@ -182,17 +223,29 @@
 			padding: 4vw;
 		}
 		
+		.skills > div {
+			background-color: #d9d9d9;
+			width: 100%;
+		}
+		
 		.skills h5 {
 			padding-top: 3vh;
 		}
 		
 		.skill {
 			text-align: right;
-			padding: 2vh;
+			padding: 1vh;
 			color: white;
 			width: 100%;
-			background-color: grey;
+			font-size: 1vw;
 		}
+		
+		.JS {width: 30%; background-color: #808080;}
+		.SQL {width: 40%; background-color: #595959;}
+		.Java {width: 25%; background-color: #808080;}
+		.sys {width: 85%; background-color: #262626;}
+		.net {width: 85%; background-color: #262626;}
+		.grap {width: 75%; background-color: #4d4d4d;}
 		
 		#imgcontent {
 			flex: 1;
@@ -214,12 +267,15 @@
 		#education {
 			display: flex;
 			flex-direction: column;
-			background-color: #262626;
+			background-color: #404040;
+			color: white;
+			text-align: center;
 		}
 		
 		#education > div {
 			padding: 5%;
 			width: 100%;
+			text-align: left;
 		}
 		
 		#education h1 {
@@ -232,44 +288,69 @@
 			text-align: right;
 			color: black;
 			background-color: white;
+			text-align: center;
 		}
 		
 		#work > div {
 			padding: 5%;
 			width: 100%;
+			text-align: right;
 		}
 		
 		#work h1 {
 			padding: 5%;
 		}
 		
-		section {
+		#other {
 			display: flex;
-			border: solid brown;
 			justify-content: center;
 			align-items: center;
 			color: white;
-			background-color: black;
+			background-color: #404040;
 			min-height: 100vh;
 		}
 		
 		footer {
 			padding: 1%;
 			display: flex;
-			justify-content: center;
+			justify-content: space-evenly;
 			align-items: center;
 			font-size: 1vw;
-			color: white;
-			background-color: black;			
+			color: black;
+			text-align: center;
+			font-weight: bold;
 		}
 		
+		#footicons {
+			display: flex;
+			justify-content: center;;
+			width: 50%;
+		}
+		
+		.brandicons {
+			text-align: center;
+			text-decoration: none;
+			color: black;
+			padding-right: 5vw;
+		}
+		
+		.fab {
+			font-size: 2vw;
+			transition: transform .5s;
+		}
+		
+		.fab:hover {
+			transform: scale(1.5);
+		}
+				
 		.material-icons {
 			font-size: 4vw;
 		}
+		
 		/* ================ FOR MOBILE ================ */
 		
 		@media screen and (max-width: 600px) {
-			body {
+			#page {
 				font-size: 5vw;
 			}
 			
@@ -323,23 +404,13 @@
 				width: 100%;
 				text-align: center;
 			}
-			
-			.info {
-				text-align: center;
-			}
-			
-			.info > div {
-				text-align: left;
-				padding: 4%;
-			}
-			
+					
 			.skill {
 				text-align: right;
-				padding: 3vh;
+				padding: 2vh;
 				color: white;
-				width: 100%;
-				background-color: grey;
-			}
+				font-size: 2vw;
+			}		
 			
 			#imgcontent {
 				flex: 1;
@@ -355,158 +426,179 @@
 			}
 			
 			footer {
-				font-size: 2vw;
+				font-size: 2vh;
 			}
+			
+			.fab {
+				font-size: 5vh;
+			}
+			
 		}
     
     </style>
     
   </head>
 
-  <body>
+  <body onload="loading();">
   
-	<nav>
+	<div id="loader"></div>
 	
-		<button>MENU</button>
-		<div>
-			<a href="#">Home</a>
-			<a href="#me">About Me</a>
-			<a href="#education">Education</a>
-			<a href="#work">Experience</a>
-			<a href="#other">More</a>
-		</div>
-		
-	</nav>
+	<main id="page">
   
-    <header>
-	
-		<div id="photo"></div>
-		<div>
-			<h5>Hello, World.</h5>
-			<h1>I'm Mateusz Moczarski</h1>
-			<h3>Student of Software Engineering</h3>
-			<div id="btns">
-				<a href="#me">Read more</a>
-				<a href="./CV.pdf">My resume</a>
-			</div>
-		</div>
-      
-    </header>
-
-    <section id="me">
-    
-		<div id="description">
-			<div id="imgcontent">
-				<img src="./me.jpg" id="myPhoto">
-			</div>
-			<div id="about">
-				<h1>About me</h1>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-				</p>
-			</div>
-		</div>
-		<div id="info">
-			<div class="info">
-			
-				<h1>Personal Info</h1>
-				<div><h5>Phone:</h5> +48 660 750 849</div>		
-				<div><h5>Email:</h5> moczarscy@gmail.com</div>
-				<div><h5>LinkedIn:</h5> linkedin.com/in/moczarskimateusz</div>
-				<div><h5>GitHub:</h5> github.com/Moczarski</div>
-				<div><h5>Address:</h5> 18-400 Łomża</div>
-				
-			</div>
-			<div class="skills">
-			
-				<h1>Skills</h1>
-				<div><h5>HTML CSS JavaScript</h5><div class="skill"></div></div>		
-				<div><h5>SQL</h5><div class="skill"></div></div>
-				<div><h5>C# Java</h5><div class="skill"></div></div>
-				<div><h5>Systems</h5><div class="skill"></div></div>
-				<div><h5>Networks</h5><div class="skill"></div></div>
-				<div><h5>Graphic</h5><div class="skill"></div></div>
-				
-			</div>
-		</div>
-      
-    </section>
-	
-	<section id="education">
+		<nav>
 		
-		<h1>My education road <i class="material-icons" style="font-size: 8vw;">school</i></h1>
-		<div>
-			<i>2018-10 - present</i>
-			<h2>Lomza State University of Applied Sciences</h2>
-			<i>Enginner, Computer Science</i>
-		</div>
-		<div>
-			<i>2019-09 - 2020-02</i>
-			<h2>University of Ostrava</h2>
-			<i>Engineer, Computer Science</i>
-		</div>
-		<div>
-			<i>2014-09 - 2018-04</i>
-			<h2>Technical School of Computer Science</h2>
-			<i>Technican IT, Computer Science</i>
-		</div>
-      
-    </section>
-	
-	<section id="work">
-    
-		<h1>IT experience <i class="material-icons" style="font-size: 8vw;">computer</i></h1>
-		<div>
-			<i>2020-05 - present</i>
-			<h2>IT Administrator - <i>Private Health Care Center "MEDICUS"</i></h2>
-			<ul>
-				<li><i class="material-icons">check</i> Creating LAN</li>
-				<li><i class="material-icons">check</i> Administration of network and systems</li>
-			</ul>
-		</div>
-		<div>
-			<i>2018-05 - 2018-06</i>
-			<h2>Web Designer - <i>TRANSAGRO</i></h2>
-			<ul>
-				<li><i class="material-icons">check</i> Creating a website and advertising graphics</li>
-				<li><i class="material-icons">check</i> Administration of systems</li>
-			</ul>
-		</div>
-		<div>
-			<i>2016-11 - 2016-12</i>
-			<h2>IT Architect - <i>F+U Sachsen GGmbH</i></h2>
-			<ul>
-				<li><i class="material-icons">check</i> Assembly, configuration and service of computer equipment</li>
-				<li><i class="material-icons">check</i> Network infrastructure planning in an office building</li>
-				<li><i class="material-icons">check</i> Server and client management</li>
-				<li><i class="material-icons">check</i> Creating and managing websites, applications and databases</li>
-			</ul>
-		</div>
-		
-    </section>
-	
-	<section id="other">
-    
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
-      
-    </section>
-
-    <footer>
-	
-      <div>
-		MOCZARSCY@GMAIL.COM &#169; 2020
-	  </div>
+			<button>MENU</button>
+			<div>
+				<a href="#">Home</a>
+				<a href="#me">About Me</a>
+				<a href="#education">Education</a>
+				<a href="#work">Experience</a>
+				<a href="#other">More</a>
+			</div>
+			
+		</nav>
 	  
-    </footer>
+		<header>
+		
+			<div id="photo"></div>
+			<div>
+				<h5>Hello, World.</h5>
+				<h1>I'm Mateusz Moczarski</h1>
+				<h3>Student of Software Engineering</h3>
+				<div id="btns">
+					<a href="#me">Read more</a>
+					<a href="./CV.pdf">My resume</a>
+				</div>
+			</div>
+		  
+		</header>
+
+		<section id="me">
+		
+			<div id="description">
+				<div id="imgcontent">
+					<img src="./me.jpg" id="myPhoto">
+				</div>
+				<div id="about">
+					<h1>About me</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+					</p>
+				</div>
+			</div>
+			<div id="info">
+				<div class="info">
+				
+					<h1>Personal Info</h1>
+					<div><h5>Phone:</h5> +48 660 750 849</div>		
+					<div><h5>Email:</h5> moczarscy@gmail.com</div>
+					<div><h5>LinkedIn:</h5> linkedin.com/in/moczarskimateusz</div>
+					<div><h5>GitHub:</h5> github.com/Moczarski</div>
+					<div><h5>Address:</h5> 18-400 Łomża</div>
+					
+				</div>
+				<div class="skills">
+				
+					<h1>Skills</h1>
+					<h5>HTML CSS JavaScript</h5>
+					<div><div class="skill JS">35%</div></div>		
+					<h5>SQL</h5>
+					<div><div class="skill SQL">45%</div></div>
+					<h5>C# Java</h5>
+					<div><div class="skill Java">25%</div></div>
+					<h5>Systems</h5>
+					<div><div class="skill sys">85%</div></div>
+					<h5>Networks</h5>
+					<div><div class="skill net">85%</div></div>
+					<h5>Graphic</h5>
+					<div><div class="skill grap">75%</div></div>
+					
+				</div>
+			</div>
+		  
+		</section>
+		
+		<section id="education">
+			
+			<h1>My education road <i class="material-icons" style="font-size: 8vw;">school</i></h1>
+			<div>
+				<i>2018-10 - present</i>
+				<h2>Lomza State University of Applied Sciences</h2>
+				<i>Enginner, Computer Science</i>
+			</div>
+			<div>
+				<i>2019-09 - 2020-02</i>
+				<h2>University of Ostrava</h2>
+				<i>Engineer, Computer Science</i>
+			</div>
+			<div>
+				<i>2014-09 - 2018-04</i>
+				<h2>Technical School of Computer Science</h2>
+				<i>Technican IT, Computer Science</i>
+			</div>
+		  
+		</section>
+		
+		<section id="work">
+		
+			<h1>IT experience <i class="material-icons" style="font-size: 8vw;">computer</i></h1>
+			<div>
+				<i>2020-05 - present</i>
+				<h2>IT Administrator - <i>Private Health Care Center "MEDICUS"</i></h2>
+				<ul>
+					<li><i class="material-icons">check</i> Creating LAN</li>
+					<li><i class="material-icons">check</i> Administration of network and systems</li>
+				</ul>
+			</div>
+			<div>
+				<i>2018-05 - 2018-06</i>
+				<h2>Web Designer - <i>TRANSAGRO</i></h2>
+				<ul>
+					<li><i class="material-icons">check</i> Creating a website and advertising graphics</li>
+					<li><i class="material-icons">check</i> Administration of systems</li>
+				</ul>
+			</div>
+			<div>
+				<i>2016-11 - 2016-12</i>
+				<h2>IT Architect - <i>F+U Sachsen GGmbH</i></h2>
+				<ul>
+					<li><i class="material-icons">check</i> Assembly, configuration and service of computer equipment</li>
+					<li><i class="material-icons">check</i> Network infrastructure planning in an office building</li>
+					<li><i class="material-icons">check</i> Server and client management</li>
+					<li><i class="material-icons">check</i> Creating and managing websites, applications and databases</li>
+				</ul>
+			</div>
+			
+		</section>
+		
+		<section id="other">
+		
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error ut.
+		  
+		</section>
+
+		<footer>
+		
+		<div>
+			MOCZARSCY@GMAIL.COM &#169; 2020
+		</div>
+		<div id="footicons">
+			<a class="brandicons" href="https://github.com/Moczarski"><i class="fab fa-github"></i></a>
+			<a class="brandicons" href="https://www.linkedin.com/in/moczarskimateusz"><i class="fab fa-linkedin"></i></a>
+		</div>
+		  
+		</footer>
+	
+	</main>
 	
   </body>
 
