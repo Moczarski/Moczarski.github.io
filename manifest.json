@@ -12,6 +12,10 @@
       "src": "icon128.webp",
       "sizes": "128x128",
       "type": "image/webp"
+    }, {
+      "src": "icon144.webp",
+      "sizes": "144x144",
+      "type": "image/webp"
     }],
     "scope": "/",
     "start_url": "/index.html",
