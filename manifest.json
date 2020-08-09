@@ -1,0 +1,21 @@
+{
+    "lang": "en",
+    "dir": "ltr",
+    "name": "MoczarskiDev",
+    "description": "Moczarski's personal website as a CV",
+    "short_name": "MMDev",
+    "icons": [{
+      "src": "icon64.webp",
+      "sizes": "64x64",
+      "type": "image/webp"
+    }, {
+      "src": "icon128.webp",
+      "sizes": "128x128",
+      "type": "image/webp"
+    }],
+    "scope": "/",
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "theme_color": "grey",
+    "background_color": "white"
+  }
