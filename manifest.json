@@ -5,17 +5,26 @@
     "description": "Moczarski's personal website as a CV",
     "short_name": "MMDev",
     "icons": [{
-      "src": "icon64.webp",
+      "src": "./images/icon64.webp",
       "sizes": "64x64",
       "type": "image/webp"
     }, {
-      "src": "icon128.webp",
+      "src": "./images/icon128.webp",
       "sizes": "128x128",
       "type": "image/webp"
     }, {
-      "src": "icon144.webp",
+      "src": "./images/icon144.webp",
       "sizes": "144x144",
       "type": "image/webp"
+    }, {
+      "src": "./images/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+	  "purpose": "any maskable"
+    }, {
+      "src": "./images/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }],
     "scope": "/",
     "start_url": "/index.html",
