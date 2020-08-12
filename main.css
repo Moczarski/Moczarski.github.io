@@ -333,13 +333,21 @@ width: 100%;
 padding: 5%;
 }
 
-#samples div {
-border: solid 2px black;
-flex: 1;
+.samples {
+padding: 2%;
 display: flex;
-align-items: center;
 justify-content: center;
-height: 100%;
+align-items: center;
+flex-direction: column;
+margin-top: 3%;
+}
+
+.samples img {
+transition: transform 2s;
+}
+
+.samples:hover img {
+transform: scaleX(1.1);
 }
 
 footer {
