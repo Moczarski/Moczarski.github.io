@@ -218,9 +218,9 @@ width: 100%;
 font-size: 1vw;
 }
 
-.JS {width: 40%; background-color: #808080;}
-.SQL {width: 45%; background-color: #595959;}
-.Java {width: 30%; background-color: #808080;}
+.JS {width: 70%; background-color: #555555;}
+.SQL {width: 60%; background-color: #747474;}
+.Java {width: 45%; background-color: #929292;}
 .sys {width: 85%; background-color: #262626;}
 .net {width: 85%; background-color: #262626;}
 .grap {width: 75%; background-color: #4d4d4d;}
@@ -392,7 +392,7 @@ transition: transform .5s;
 }
 
 .fab:hover {
-transform: scale(1.5);
+transform: scale(1.3);
 }
 	
 .material-icons {
